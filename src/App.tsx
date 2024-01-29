@@ -37,8 +37,8 @@ function App() {
                 }}
               >
                 <Routes>
-                  <Route path="/register" element={<Register/>}/>
-                  <Route path="/login" element={<Login/>}/>
+                  <Route path="/register" element={<Register />}/>
+                  <Route path="/login" element={<Login />}/>
                   <Route path="/forgot-password" element={<ForgotPassword/>}/>
                   <Route element={
                     <Authenticated
@@ -49,7 +49,7 @@ function App() {
                       </Layout>
                     </Authenticated>
                   }>
-                    <Route index element={<Home/>}/>
+                    <Route index element={<Home />}/>
                   </Route>
                 </Routes>
                 <RefineKbar />
