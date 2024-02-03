@@ -18,7 +18,6 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <GitHubBanner />
       <RefineKbarProvider>
           <AntdApp>
             <DevtoolsProvider>
@@ -37,19 +36,23 @@ function App() {
                 }}
               >
                 <Routes>
+                <Route index element={<Home />}/>
                   <Route path="/register" element={<Register />}/>
                   <Route path="/login" element={<Login />}/>
                   <Route path="/forgot-password" element={<ForgotPassword/>}/>
-                  <Route element={
+                  <Route
+                     element={
                     <Authenticated
-                    key="authenticated-layout" 
-                    fallback={<CatchAllNavigate to="/login"/>}>
+                      key="authenticated-layout"
+                      fallback={<CatchAllNavigate to="/login" />}
+                    >
                       <Layout>
                         <Outlet />
                       </Layout>
                     </Authenticated>
-                  }>
-                    <Route index element={<Home />}/>
+                  }
+                >
+                    
                   </Route>
                 </Routes>
                 <RefineKbar />
