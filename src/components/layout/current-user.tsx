@@ -11,7 +11,7 @@ const CurrentUser = () => {
         overlayInnerStyle={{ padding: 0 }}
         overlayStyle={{ zIndex: 999 }}
       >
-    <CustomAvatar/>
+   Test
     </Popover>
     </>
   )

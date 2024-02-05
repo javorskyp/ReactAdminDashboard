@@ -1,10 +1,10 @@
 import React from "react";
-
+import type { AvatarProps } from "antd";
 import { Avatar as AntdAvatar } from "antd";
 
 type Props = AvatarProps & {
-    name?: string;
-  };
+  name?: string;
+};
   
   const CustomAvatarComponent = ({ name = "", style, ...rest }: Props) => {
   return (
