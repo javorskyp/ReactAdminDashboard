@@ -9,17 +9,19 @@ type Props = AvatarProps & {
   const CustomAvatarComponent = ({ name = "", style, ...rest }: Props) => {
   return (
     <AntdAvatar
-      alt={'jpSoftware'}
+      alt={name}
       size="small"
       style={{
         backgroundColor: '#87d068',
         display: "flex",
         alignItems: "center",
         border: "none",
+        ...style
       }}
+      //{...rest}
      
     >
-      JP
+      {name}
     </AntdAvatar>
   );
 };
