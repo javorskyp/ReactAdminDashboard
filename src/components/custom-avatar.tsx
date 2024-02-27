@@ -1,6 +1,7 @@
 import React from "react";
 import type { AvatarProps } from "antd";
 import { Avatar as AntdAvatar } from "antd";
+import { getNameInitials } from "@/utilities";
 
 type Props = AvatarProps & {
   name?: string;
@@ -18,10 +19,10 @@ type Props = AvatarProps & {
         border: "none",
         ...style
       }}
-      //{...rest}
+      {...rest}
      
     >
-      {name}
+      {getNameInitials(name || '')}
     </AntdAvatar>
   );
 };
