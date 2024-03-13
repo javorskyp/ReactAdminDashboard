@@ -1,10 +1,11 @@
 import { CalendarOutlined } from '@ant-design/icons'
 import { Card, List } from 'antd'
 import React, { useState } from 'react'
+import { UpcomingEventsSkeleton } from '../skeleton/upcoming-events'
 import { Text } from '../text'
 
 const UpcomingEvents = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <Card 
         style={{height: '100%'}} 
@@ -28,8 +29,10 @@ const UpcomingEvents = () => {
                     itemLayout="horizontal"
                     dataSource={Array.from({length: 5}).map((_, index) => ({
                         id: index,
-                    }))}>
-
+                    }))}
+                    renderItem={() => <UpcomingEventsSkeleton />}  
+                    >
+                         
                 </List>
             ): <List>
                 </List>}
